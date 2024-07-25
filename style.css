@@ -6,6 +6,18 @@
 
 @font-face {
   font-family: "Muller-Medium";
+  src: url(/assets/fonts/muller/Muller-Medium.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Muller-Bold";
+  src: url(/assets/fonts/muller/Muller-Bold.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Muller-Medium";
   src: url(../fonts/muller/Muller-Medium.ttf);
   font-weight: normal;
 }
@@ -40,7 +52,6 @@ body {
 .burger-menu {
   display: none;
 }
-/* color: #fe9f43; */
 a {
   text-decoration: none;
 }
@@ -163,6 +174,7 @@ li {
 .main .default-font:first-child {
   color: rgba(254, 159, 67, 0.5);
 }
+
 .bread-crumbs {
   color: rgba(254, 159, 67, 0.5);
   cursor: pointer;
