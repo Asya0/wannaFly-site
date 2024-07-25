@@ -1,68 +1,87 @@
 @font-face {
   font-family: "Muller-Regular";
-  src: url(./assets/fonts/muller/Muller-Regular.ttf);
-  font-weight: normal;
-}
-@font-face {
-  font-family: "Muller-Medium";
-  src: url(/assets/fonts/muller/Muller-Medium.ttf);
-  font-weight: normal;
-}
-@font-face {
-  font-family: "Muller-Bold";
-  src: url(/assets/fonts/muller/Muller-Bold.ttf);
+  src: url(../fonts/muller/Muller-Regular.ttf);
   font-weight: normal;
 }
 
+@font-face {
+  font-family: "Muller-Medium";
+  src: url(../fonts/muller/Muller-Medium.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Muller-Bold";
+  src: url(../fonts/muller/Muller-Bold.ttf);
+  font-weight: normal;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+}
 body {
   font: 14px/1.4 "Muller-Regular", sans-serif;
   background-color: #1e201f;
   color: #fff;
+  overflow-x: hidden;
 }
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 15px;
   box-sizing: border-box;
 }
+.burger-menu {
+  display: none;
+}
 /* color: #fe9f43; */
 a {
   text-decoration: none;
 }
+
 li {
   list-style: none;
 }
-.link {
+
+.btn .link {
   color: #fff;
   transition: 0.4s;
 }
-.link:hover {
-  color: #ffffffc7;
-  transition: color 0.4s;
-}
-.btn a {
-  color: #fff;
-}
+
 .btn {
-  padding: 16px 32px 16px 32px;
+  padding: 16px 32px;
   border-radius: 155px;
   border: 2px solid #ffffff;
   transition: border 0.4s;
-  cursor: pointer;
 }
+
 .btn:hover {
   border: 2px solid #ffffff80;
   transition: border 0.4s;
 }
+
+.btn:hover span {
+  color: #ffffff80;
+}
+
 /* Header */
 .header {
   margin-bottom: 62px;
 }
+
 .header-content {
   display: flex;
   justify-content: space-between;
   margin: 24px 0;
+  padding-left: 96px;
 }
+
 .nav-list {
   list-style: none;
   padding: 0;
@@ -91,7 +110,7 @@ li {
 }
 
 .submenu::after {
-  content: url(./assets/svg/arrow.svg);
+  content: url(../svg/arrow.svg);
   display: inline-block;
   margin-left: 8px;
   transition: transform 0.7s;
@@ -102,19 +121,24 @@ li {
 .nav-item:hover .submenu::after {
   transform: translateY(60%) rotate(180deg);
   color: #ffffff80;
+  opacity: 0.5;
 }
 
 .header-contacts {
   display: flex;
+  gap: 20px;
 }
+
 /* Main */
 .main {
   margin-bottom: 52px;
 }
+
 .main-content {
   display: flex;
   flex-direction: column;
 }
+
 .info-box {
   position: relative;
   display: flex;
@@ -127,22 +151,29 @@ li {
   z-index: 3;
   margin-bottom: 80px;
 }
+
 .main .info-box {
   padding: 67px 53px;
 }
+
 .main-text {
   width: 55%;
   z-index: 2;
+}
+.main .default-font:first-child {
+  color: rgba(254, 159, 67, 0.5);
 }
 .bread-crumbs {
   color: rgba(254, 159, 67, 0.5);
   cursor: pointer;
   margin-bottom: 20px;
 }
+
 .bread-crumbs span {
   color: #fe9f43;
   cursor: pointer;
 }
+
 .main-title {
   color: rgb(255, 255, 255);
   font-family: "Muller-Bold", sans-serif;
@@ -150,19 +181,30 @@ li {
   font-weight: 700;
   line-height: 110%;
   text-align: left;
-  max-width: 470px;
+  max-width: 485px;
 }
-.main-img img {
+
+.main-img img:first-child {
   z-index: -1;
   position: absolute;
   right: -120px;
   bottom: -50px;
 }
+
+.main-img img:last-child {
+  z-index: -2;
+  position: absolute;
+  right: 490px;
+  bottom: 48px;
+  transform: rotate(25deg);
+}
+
 .main-info {
   display: flex;
   /* justify-content: space-between; */
   gap: 52px;
 }
+
 .block-title {
   font-family: "Muller-Bold", sans-serif;
   font-size: 1.7rem;
@@ -171,18 +213,24 @@ li {
   text-align: left;
   margin-bottom: 10px;
 }
+
 .block-subtitle {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 140%;
-  letter-spacing: 0%;
   text-align: left;
   opacity: 0.5;
 }
+
 /* Clients */
 .clients {
   margin-bottom: 67px;
 }
+
+.clients-content .h2-title {
+  margin-bottom: 40px;
+}
+
 .h2-title {
   font-family: "Muller-Bold", sans-serif;
   font-size: 2.57rem;
@@ -190,11 +238,32 @@ li {
   line-height: 110%;
   text-align: left;
 }
-/*  */
+
+/* Mailing */
+.mailing {
+  margin-bottom: 130px;
+}
 .mailing .info-box {
   padding: 40px 80px;
 }
+
 .mailing .main-img img {
   right: 150px;
   bottom: -60px;
+}
+.mailing .h2-title {
+  margin-bottom: 20px;
+}
+.mailing .h2-subtitle {
+  margin-bottom: 40px;
+}
+.mailing .main-img img {
+  transform: rotate(0);
+}
+.mailing .main-img img:last-child {
+  right: 69px;
+  bottom: 180px;
+}
+.default-font {
+  font-family: "Arial", sans-serif;
 }
